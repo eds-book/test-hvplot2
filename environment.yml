@@ -1,0 +1,11 @@
+name: test-hvplot
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - jupyter
+  - hvplot
+  - plotly
+  - dask
+  - datashader
