@@ -76,12 +76,14 @@ jobs:
                 v=$(jupyter kernelspec list | awk '{print $1}' | egrep ${{steps.config_kernel.outputs.prop}})
                 jupyter-nbconvert --to notebook --ExecutePreprocessor.kernel_name="$v" --inplace --execute ${{steps.config_file.outputs.prop}}
                 cp ${{steps.config_file.outputs.prop}}  /tmp
+                cp img.html /tmp
       - name: Commit
         run: |
           ls
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add ${{steps.config_file.outputs.prop}}
+          git add img.html
           git commit -m 'update'
       - name: Push
         uses: ad-m/github-push-action@master
