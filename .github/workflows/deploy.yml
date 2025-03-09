@@ -25,7 +25,6 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/render'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -46,5 +45,6 @@ jobs:
         with:
           path: './_build/html'
       - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/render'
         id: deployment
         uses: actions/deploy-pages@v4
