@@ -1,5 +1,5 @@
 {
-    "notebook_name": "bokeh_small.ipynb",
+    "notebook_name": "bokeh.ipynb",
     "kernel": "python",
     "quay_image": "edsbook/test"
 }
