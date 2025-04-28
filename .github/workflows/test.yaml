@@ -5,17 +5,4 @@ on:
 
 jobs:
   test-build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout files in repo
-      uses: actions/checkout@main
-    - name: Get properties from the config file
-      id: config_quay
-      uses: notiz-dev/github-action-json-property@release
-      with:
-        path: '.github/config.json'
-        prop_path: 'quay_image'
-    - name: Run test build
-      uses: eds-book/notebooks-workflows/.github/workflows/test.yaml@main
-      with:
-        quay_image: ${{steps.config_quay.outputs.prop}}
+    uses: eds-book/notebooks-workflows/.github/workflows/test.yaml@main
