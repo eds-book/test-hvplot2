@@ -8,11 +8,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout files in repo
-        uses: actions/checkout@main
-      - uses: eds-book/notebooks-workflows/.github/workflows/build.yaml@main
-        with:
-          QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
-          QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
+    uses: eds-book/notebooks-workflows/.github/workflows/build.yaml@main
+    with:
+      QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
+      QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
