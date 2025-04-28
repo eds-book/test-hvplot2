@@ -9,6 +9,3 @@ on:
 jobs:
   build-and-push:
     uses: eds-book/notebooks-workflows/.github/workflows/build.yaml@main
-    secrets:
-      QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
-      QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
