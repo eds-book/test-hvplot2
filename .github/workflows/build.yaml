@@ -12,8 +12,7 @@ jobs:
     steps:
       - name: Checkout files in repo
         uses: actions/checkout@main
-      - name: Build and push the image to quay.io
-        uses: eds-book/notebooks-workflows/.github/workflows/build.yaml@main
+      - uses: eds-book/notebooks-workflows/.github/workflows/build.yaml@main
         with:
           QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
           QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
