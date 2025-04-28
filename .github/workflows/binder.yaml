@@ -3,7 +3,6 @@ name: Test this PR on Binder Badge
 on:
   pull_request_target:
     types: [opened]
-  worfkflow_dispatch:
 
 jobs:
   binder:
