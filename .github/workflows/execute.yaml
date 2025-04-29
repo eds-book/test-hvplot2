@@ -3,10 +3,11 @@ name: Execute Notebook
 on:
   workflow_run:
     workflows: ["Build and push container image"]
-    branches: main
-    types:
-      - completed
+    branches: [main, postprint]
+    types: [completed]
 
 jobs:
   execute:
     uses: eds-book/notebooks-workflows/.github/workflows/execute.yaml@main
+    with:
+      branch: ${{ github.ref }}

@@ -2,9 +2,7 @@ name: Build and push container image
 
 on:
   push:
-    branches:
-      - main
-      - postprint
+    branches: [main, postprint]
 
 jobs:
   build-and-push:
