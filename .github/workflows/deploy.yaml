@@ -3,9 +3,8 @@ name: MyST GitHub Pages Deploy
 on:
   workflow_run:
     workflows: ["Execute Notebook"]
-    branches: main
-    types:
-      - completed
+    branches: [main]
+    types: [completed]
 
 jobs:
   deploy:
