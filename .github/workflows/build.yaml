@@ -1,5 +1,9 @@
 name: Build and push container image
 
+on:
+  push:
+    branches: [main, postprint]
+
 jobs:
   build-and-push:
     uses: eds-book/notebooks-workflows/.github/workflows/build.yaml@main
