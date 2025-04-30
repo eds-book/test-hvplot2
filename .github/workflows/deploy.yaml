@@ -9,5 +9,3 @@ on:
 jobs:
   deploy:
     uses: eds-book/notebooks-workflows/.github/workflows/deploy.yaml@main
-    with:
-      branch: 'render'

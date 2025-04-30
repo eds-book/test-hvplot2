@@ -8,15 +8,4 @@ on:
 
 jobs:
   execute:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build and push the image to quay.io (render)
-        if: github.event.workflow_run.head_branch == 'refs/heads/main'
-        uses: eds-book/notebooks-workflows/.github/workflows/execute.yaml@main
-        with:
-          branch: 'render'
-      - name: Build and push the image to quay.io (preview)
-        if: github.event.workflow_run.head_branch == 'refs/heads/postprint'
-        uses: eds-book/notebooks-workflows/.github/workflows/execute.yaml@main
-        with:
-          branch: 'preview'
+    uses: eds-book/notebooks-workflows/.github/workflows/execute.yaml@main
